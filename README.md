@@ -23,7 +23,7 @@ Navigate to the root of the project via command line and execute the command:
 mvn spring-boot:run
 ```
 
-The CLI will run the application on the configured port(8081) and will be accesiable through default URL.
+The CLI will run the application on the configured port(8081) and will be accessible through default URL.
 
 # Extra Information
 
