@@ -48,3 +48,7 @@ Presentation Layer(resources/static altında bulunan HTML dosyaları) <--> Contr
 <--> Service Layer(ReportService, WorkerService ve onların implementasyonları) <--> Persistance Layer(ReportRepository ve WorkerRepository)
 ```
 
+Bu şekilde birbirleriyle iletişim ve uyum içerisinde bir yapının en büyük faydası herhangi bir katmanda yapılacak değişikliklerin diğer katmanları etkilememesidir ve ayrıca böyle katmanlı yapılar Java EE için - ki özellikle Spring ile beraber gelen Dependancy Injection özelliği ile - çok daha basit ve kullabilir hale gelmektedir.
+
+Veritabanı tarafında ise iki ayrı veritabanı kullanıldı. Birincisi yetkilendirilmiş kullanıcılar için bir diğeri ise raporların ve laborantlar için 
+kullanıldı. Admin yetkisine sahip olmayan kullanıcılar için Thymeleaf'ın sağladığı özellik ile beraber silme, yeni rapor ve laborant ekleme butonları gizlendi. 
