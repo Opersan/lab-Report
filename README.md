@@ -1,6 +1,6 @@
 # Laboratory Report Management System
 
-# Users
+# User List
 
 > Username : Admin     
 > Password : pwd
@@ -16,6 +16,12 @@
 
 # Installation
 
+You will only need a working maven terminal and JDK 11.
+
+Navigate to the root of the project via command line and execute the command:
+```sh
+mvn spring-boot:run
+```
 
 
 Default URL : http://localhost:8081/
