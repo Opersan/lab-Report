@@ -1,39 +1,54 @@
-# Laboratory Report Management System
+# Laboratuar Raporları Yönetim Sistemi
 
-# User List
+# Kurulum
 
-> Username : Admin     
-> Password : pwd  
-> authority: Admin   
+CLI ile çalışan bir maven ve JDK 13'e sahip olmak yeterli.
 
-> Username : Furkan  
-> Password : pwd  
-> authority: Admin  
-
-> Username : Omer  
-> Password : pwd  
-> authority: User  
-
-# Installation
-
-You will only need a working maven terminal and JDK 11.
-
-Navigate to the root of the project via command line and execute the command:
+Komut satırında projenin kök klasörüne ulaşıldığında kodu çalıştırmak yeterli.
 ```sh
 mvn spring-boot:run
 ```
 
-The CLI will run the application on the configured port(8081) and will be accessible through default URL.
+Komut satırı belirtilen portta(8081) Spring Boot uygulamasını başlatacak ve Default olarak belirlenen URL'den ulaşılabilir olacaktır.
 
-# Extra Information
+# Gerekli Bilgiler
 
 Default URL : http://localhost:8081/
 
-Database Console URL : http://localhost:8081/h2-console
+Veritabanı Konsol URL : http://localhost:8081/h2-console
 
-> Database Username : admin  
-> Database password : pwd 
+> Veritabanı Kullanıcı Adı: admin  
+> Veritabanı Kullanıcı Şifresi : pwd 
 
-For database file changes  
+# Kullanıcı Listesi
+
+> Kullanıcı Adı : Admin     
+> Şifre : pwd  
+> Yetkinlik: Admin   
+
+> Kullanıcı Adı : Furkan  
+> Şifre : pwd  
+> Yetkinlik: Admin  
+
+> Kullanıcı Adı : Omer  
+> Şifre : pwd  
+> Yetkinlik: User  
+
+Konsol üzerinden farklı veritabanı dosyalarının kontrolü için gerekli URL listesi  
+
 Reports/Workers file location : jdbc:h2:./reports-file  
 Users file location : jdbc:h2:./users
+
+
+# Kullanılan Teknik Seçimleri/Kabulleri
+
+Spring ile 4 katmanlı bir yapı içerisinde uygulamayı gerçekleştirdim. Bu katmanlar sırasıyla ve birbirleri arasındaki bağlantıları gösterecek şekilde şöyledir: 
+```sh
+Presentation Layer(resources/static altında bulunan HTML dosyaları) <--> Controller Layer(MainController ve ReportController)
+<--> Service Layer(ReportService, WorkerService ve onların implementasyonları) <--> Persistance Layer(ReportRepository ve WorkerRepository)
+```
+
+Bu şekilde birbirleriyle iletişim ve uyum içerisinde bir yapının en büyük faydası herhangi bir katmanda yapılacak değişikliklerin diğer katmanları etkilememesidir ve ayrıca böyle katmanlı yapılar Java EE için - ki özellikle Spring ile beraber gelen Dependancy Injection özelliği ile - çok daha basit ve kullabilir hale gelmektedir.
+
+Veritabanı tarafında ise iki ayrı veritabanı kullanıldı. Birincisi yetkilendirilmiş kullanıcılar için bir diğeri ise raporların ve laborantlar için 
+kullanıldı. Admin yetkisine sahip olmayan kullanıcılar için Thymeleaf'ın sağladığı özellik ile beraber silme, yeni rapor ve laborant ekleme butonları gizlendi. Yeni kullanıcıların eklenmesi için bir özellik eklemek istemedim bunun yerine H2-Console üzerinden deneme amaçlı yeni kullanıcı ekledim.
