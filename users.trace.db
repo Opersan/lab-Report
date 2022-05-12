@@ -433,3 +433,6 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/fur
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
 	... 100 more
+2022-05-12 17:52:36 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "UAUTHORITIES" not found; SQL statement:
+SELECT * FROM UAUTHORITIES SERS [42102-200]

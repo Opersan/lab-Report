@@ -5393,3 +5393,15 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/fur
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
 	... 100 more
+2022-05-12 17:49:48 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (WORKER: ""WORKER_ID"" INT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."WORKER"("WORKER_ID","WORKER_FIRSTNAME","WORKER_LASTNAME")VALUES(?,?,?) [22018-200]
+2022-05-12 17:49:48 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (WORKER: ""WORKER_ID"" INT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."WORKER"("WORKER_ID","WORKER_FIRSTNAME","WORKER_LASTNAME")VALUES(?,?,?) [22018-200]
+2022-05-12 17:50:04 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (WORKER: ""WORKER_ID"" INT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."WORKER"("WORKER_ID","WORKER_FIRSTNAME","WORKER_LASTNAME")VALUES(?,?,?) [22018-200]
+2022-05-12 17:50:04 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (WORKER: ""WORKER_ID"" INT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."WORKER"("WORKER_ID","WORKER_FIRSTNAME","WORKER_LASTNAME")VALUES(?,?,?) [22018-200]
