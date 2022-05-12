@@ -42,6 +42,8 @@ Users file location : jdbc:h2:./users
 
 # Kullanılan Teknik Seçimleri/Kabulleri
 
-
-
+Spring ile 4 katmanlı bir yapı içerisinde uygulamayı gerçekleştirdim. Bu katmanlar sırasıyla ve birbirleri arasındaki bağlantıları gösterecek şekilde şöyledir: 
+```sh
+Presentation Layer  <--> Controller Layer <--> Service Layer <--> Repository Layer 
+```
 
