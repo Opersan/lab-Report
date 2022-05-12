@@ -2,7 +2,7 @@
 
 # Users
 
-Username : Admin. 
+Username : Admin     
 Password : pwd
 authority: Admin
 
