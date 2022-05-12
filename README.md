@@ -1,4 +1,4 @@
-# lab-Report
+# Laboratory Report Management System
 
 # Users
 
