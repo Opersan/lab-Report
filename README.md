@@ -38,3 +38,10 @@ Konsol üzerinden farklı veritabanı dosyalarının kontrolü için gerekli URL
 
 Reports/Workers file location : jdbc:h2:./reports-file  
 Users file location : jdbc:h2:./users
+
+
+# Kullanılan Teknik Seçimleri/Kabulleri
+
+
+
+
