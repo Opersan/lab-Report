@@ -23,10 +23,11 @@ Navigate to the root of the project via command line and execute the command:
 mvn spring-boot:run
 ```
 
+The CLI will run the application on the configured port(8081) and will be accesiable through default URL.
 
 Default URL : http://localhost:8081/
 
-Console URL : http://localhost:8081/h2-console
+Database Console URL : http://localhost:8081/h2-console
 
 For database file changes ##
 Reports/Workers file location : jdbc:h2:./reports-file
