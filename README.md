@@ -1,39 +1,40 @@
-# Laboratory Report Management System
+# Laboratuar Raporları Yönetim Sistemi
 
-# User List
+# Kurulum
 
-> Username : Admin     
-> Password : pwd  
-> authority: Admin   
+CLI ile çalışan bir maven ve JDK 13'e sahip olmak yeterli.
 
-> Username : Furkan  
-> Password : pwd  
-> authority: Admin  
-
-> Username : Omer  
-> Password : pwd  
-> authority: User  
-
-# Installation
-
-You will only need a working maven terminal and JDK 13.
-
-Navigate to the root of the project via command line and execute the command:
+Komut satırında projenin kök klasörüne ulaşıldığında kodu çalıştırmak yeterli.
 ```sh
 mvn spring-boot:run
 ```
 
-The CLI will run the application on the configured port(8081) and will be accessible through default URL.
+Komut satırı belirtilen portta(8081) Spring Boot uygulamasını başlatacak ve Default olarak belirlenen URL'den ulaşılabilir olacaktır.
 
-# Extra Information
+# Gerekli Bilgiler
 
 Default URL : http://localhost:8081/
 
-Database Console URL : http://localhost:8081/h2-console
+Veritabanı Konsol URL : http://localhost:8081/h2-console
 
-> Database Username : admin  
-> Database password : pwd 
+> Veritabanı Kullanıcı Adı: admin  
+> Veritabanı Kullanıcı Şifresi : pwd 
 
-For database file changes  
+# Kullanıcı Listesi
+
+> Kullanıcı Adı : Admin     
+> Şifre : pwd  
+> Yetkinlik: Admin   
+
+> Kullanıcı Adı : Furkan  
+> Şifre : pwd  
+> Yetkinlik: Admin  
+
+> Kullanıcı Adı : Omer  
+> Şifre : pwd  
+> Yetkinlik: User  
+
+Konsol üzerinden farklı veritabanı dosyalarının kontrolü için gerekli URL listesi  
+
 Reports/Workers file location : jdbc:h2:./reports-file  
 Users file location : jdbc:h2:./users
