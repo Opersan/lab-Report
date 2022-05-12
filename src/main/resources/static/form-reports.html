@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Save Report</title>
+</head>
+<body>
+<div class="container">
+    <h3>Report Directory</h3>
+    <hr>
+
+    <p class="h4 mb-4">Save Report</p>
+
+    <form action="#" th:action="@{/reports/save}" th:object="${report}" enctype="multipart/form-data" method="post">
+        <input type="text" th:field="*{patientName}" class="form-control mb-4 col-4" placeholder="First Name">
+        <input type="text" th:field="*{patientLastname}" class="form-control mb-4 col-4" placeholder="Last Name">
+        <input type="text" th:field="*{patientId}" class="form-control mb-4 col-4" placeholder="Identity Number">
+        <input type="text" th:field="*{patientDiagnosis}" class="form-control mb-4 col-4" placeholder="Diagnosis">
+        <input type="text" th:field="*{diagDetail}" class="form-control mb-4 col-4" placeholder="Diagnosis Details">
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+            <select class="form-select" id="inputGroupSelect01" th:field ="*{worker}">
+                <option selected value="0" th:value="null">Workers...</option>
+                <option th:each="worker :${workers}" th:value="${worker.getWorkerId()}" th:text="${worker.getWorkerId()} + ' ' + ${worker.getWorkerFirstname()} + ' ' + ${worker.getWorkerLastName()}"></option>
+            </select>
+        </div>
+        <input type="date" th:field="*{date}" class="form-control mb-4 col-4" value="2017-01-01">
+        <input type="file" th:field="*{reportImg}" class="form-control mb-4 col-4">
+        <div th:if="${#fields.hasAnyErrors()}">
+            <ul>
+                <li th:each="err : ${#fields.allErrors()}" th:text="${err}" />
+            </ul>
+        </div>
+        <button type="submit" class="btn btn-info col-2">Save</button>
+    </form>
+    <hr>
+    <a th:href="@{/reports/list}">Back to Reports List</a>
+</div>
+</body>
+</html>

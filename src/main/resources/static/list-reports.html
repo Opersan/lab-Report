@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Report Directory</title>
+</head>
+<body>
+<div class="container-fluid">
+    <h3>Report Directory</h3>
+    <hr>
+
+    <form th:action="@{/reports/search}" class="form-inline">
+        <a th:href="@{/reports/showFormForAdd}" class="btn btn-primary btn-sm mb-3">
+            Add New Report
+        </a>
+        <a th:href="@{/reports/showFormForAddWorker}" class="btn btn-primary ml-1 btn-sm mb-3">
+            Add New Worker
+        </a>
+        <input class="form-control  ml-5 mr-sm-2 mb-3" style="width: 38%" type="search" name="reportParam" placeholder="Search for patients/workers by name/surname/id" />
+
+        <button class="btn btn-success mb-3" type="submit">Search</button>
+    </form>
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>File ID</th>
+            <th>Full Name</th>
+            <th>Patient ID</th>
+            <th>Diagnosis</th>
+            <th>Diagnosis Details</th>
+            <th>
+                <a th:href="@{/reports/order}">Date</a>
+            </th>
+            <th>Attachment</th>
+            <th>Worker Name</th>
+            <div sec:authorize="hasRole('ROLE_ADMIN')">
+                <th>Action</th>
+            </div>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="report : ${reports}">
+
+            <td th:text="${report.fileId}" />
+            <td th:text="${report.patientName} + ' ' + ${report.patientLastname}" />
+            <td th:text="${report.patientId}"/>
+            <td th:text="${report.patientDiagnosis}"/>
+            <td th:text="${report.diagDetail}"/>
+            <td th:text="${report.date}"/>
+            <td>
+                <a th:href="@{/reports/download(reportId=${report.fileId})}">File</a>
+            </td>
+            <td th:text="${report.getWorker().getWorkerFirstname()}"/>
+                <div sec:authorize="hasRole('ROLE_ADMIN')">
+                    <td>
+                    <a th:href="@{/reports/showFormForUpdate(reportId=${report.fileId})}" class="btn btn-primary btn-sm">Update</a>
+                    <a th:href="@{/reports/delete(reportId=${report.fileId})}"
+                        class="btn btn-danger btn-sm"
+                        onclick="if (!(confirm('Are you sure you want to delete this report?'))) return false ">Delete</a>
+                    </td>
+                </div>
+        </tr>
+        </tbody>
+    </table>
+
+    <form action="#" th:action="@{/logout}"
+          method="POST">
+
+        <input type="submit" value="Logout" class="btn btn-outline-primary mt-2" />
+
+    </form>
+ </div>
+</body>
+</html>
+
+
+
