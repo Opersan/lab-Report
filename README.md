@@ -34,6 +34,6 @@ Database Console URL : http://localhost:8081/h2-console
 > Database Username : admin  
 > Database password : pwd 
 
-For database file changes ##
-Reports/Workers file location : jdbc:h2:./reports-file
+For database file changes  
+Reports/Workers file location : jdbc:h2:./reports-file  
 Users file location : jdbc:h2:./users
