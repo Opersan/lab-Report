@@ -31,7 +31,7 @@ Default URL : http://localhost:8081/
 
 Database Console URL : http://localhost:8081/h2-console
 
-> Database Username : admin
+> Database Username : admin  
 > Database password : pwd 
 
 For database file changes ##
