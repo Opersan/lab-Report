@@ -3,7 +3,7 @@
 # User List
 
 > Username : Admin     
-> Password : pwd
+> Password : pwd  
 > authority: Admin   
 
 > Username : Furkan  
@@ -30,6 +30,9 @@ The CLI will run the application on the configured port(8081) and will be accesi
 Default URL : http://localhost:8081/
 
 Database Console URL : http://localhost:8081/h2-console
+
+> Database Username : admin
+> Database password : pwd 
 
 For database file changes ##
 Reports/Workers file location : jdbc:h2:./reports-file
