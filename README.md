@@ -16,7 +16,7 @@
 
 # Installation
 
-You will only need a working maven terminal and JDK 11.
+You will only need a working maven terminal and JDK 13.
 
 Navigate to the root of the project via command line and execute the command:
 ```sh
