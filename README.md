@@ -44,6 +44,7 @@ Users file location : jdbc:h2:./users
 
 Spring ile 4 katmanlı bir yapı içerisinde uygulamayı gerçekleştirdim. Bu katmanlar sırasıyla ve birbirleri arasındaki bağlantıları gösterecek şekilde şöyledir: 
 ```sh
-Presentation Layer(resources/static altında bulunan HTML dosyaları) <--> Controller Layer(MainController ve ReportController) <--> Service Layer(ReportService, WorkerService ve onların implementasyonları) <--> Persistance Layer(ReportRepository ve WorkerRepository)
+Presentation Layer(resources/static altında bulunan HTML dosyaları) <--> Controller Layer(MainController ve ReportController)
+<--> Service Layer(ReportService, WorkerService ve onların implementasyonları) <--> Persistance Layer(ReportRepository ve WorkerRepository)
 ```
 
