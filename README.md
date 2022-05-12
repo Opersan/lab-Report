@@ -25,6 +25,8 @@ mvn spring-boot:run
 
 The CLI will run the application on the configured port(8081) and will be accesiable through default URL.
 
+# Extra Information
+
 Default URL : http://localhost:8081/
 
 Database Console URL : http://localhost:8081/h2-console
