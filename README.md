@@ -4,15 +4,15 @@
 
 > Username : Admin     
 > Password : pwd
-> authority: Admin
+> authority: Admin  
 
-Username : Furkan
-Password : pwd
-authority: Admin
+> Username : Furkan  
+> Password : pwd  
+> authority: Admin  
 
-Username : Omer
-Password : pwd
-authority: User
+> Username : Omer  
+> Password : pwd  
+> authority: User  
 
 Default URL : http://localhost:8081/
 
